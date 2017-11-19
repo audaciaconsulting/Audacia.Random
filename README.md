@@ -27,7 +27,7 @@ There are a variety of extension methods available for the `System.Random` class
 - `.FemaleForename()`
 - `.Surname()`
 - `.Street()`
-c.Company()`
+- `.Company()`
 
 For any other object, the following extension methods are available:
 - `.OrNull()`
