@@ -36,7 +36,7 @@ For any other object, the following extension methods are available:
 - `.OrDefault(int probability)`
 
 ## Base Data
-The `Audacia.Random.Data` class exposes the collectiions of strings used for some of the extension methods. These are:
+The `Audacia.Random.Data` class exposes the collections of strings used for some of the extension methods. These are:
 - `Cities`
 - `Counties`
 - `MaleNames`
