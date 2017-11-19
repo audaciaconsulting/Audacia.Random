@@ -7,19 +7,19 @@ namespace Audacia.Random
 {
     internal static class Data
     {
-        public static string[] Cities = List("Audacia.Random.Cities");
+        public static string[] Cities { get; } = List("Audacia.Random.Cities");
 
-        public static string[] Counties = List("Audacia.Random.Counties");
+        public static string[] Counties { get; } = List("Audacia.Random.Counties");
 
-        public static string[] MaleNames = List("Audacia.Random.Forenames.Male");
+        public static string[] MaleNames { get; } = List("Audacia.Random.Forenames.Male");
 
-        public static string[] FemaleNames = List("Audacia.Random.Forenames.Female");
+        public static string[] FemaleNames { get; } = List("Audacia.Random.Forenames.Female");
 
-        public static string[] Surnames = List("Audacia.Random.Surnames");
+        public static string[] Surnames { get; } = List("Audacia.Random.Surnames");
 
-        public static string[] Streets = List("Audacia.Random.Streets");
+        public static string[] Streets { get; } = List("Audacia.Random.Streets");
 
-        public static string[] Companies = List("Audacia.Random.Companies");
+        public static string[] Companies { get; } = List("Audacia.Random.Companies");
 
 
         private static string[] List(string name)

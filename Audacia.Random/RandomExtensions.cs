@@ -114,10 +114,10 @@ namespace Audacia.Random
             return System.DateTime.Now.AddYears(-18).AddDays(-random.Next(0, 30000));
         }
 
-        public static T Element<T>(this System.Random random, IList<T> @this)
+        public static T Element<T>(this System.Random random, IList<T> items)
         {
-            var index = random.Next(0, @this.Count - 1);
-            return @this.ElementAt(index);
+            var index = random.Next(0, items.Count - 1);
+            return items.ElementAt(index);
         }
 
         public static long Long(System.Random rand) => rand.Long(0, long.MaxValue);
