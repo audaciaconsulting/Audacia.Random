@@ -65,19 +65,17 @@ namespace Audacia.Random.Extensions
             return (T)value;
         }
 
-        public static IEnumerable<T> Elements<T>(this System.Random random, IEnumerable<T> items, int count)
+        public static IEnumerable<T> Elements<T>(this System.Random random, IList<T> items, int count)
         {
-            var list = items.ToList();
-
             for (var i = count; i > 0; i--)
             {
-                var index = random.Next(0, list.Count);
-                yield return list[index];
-                list.RemoveAt(index);
+                var index = random.Next(0, items.Count);
+                yield return items[index];
+                items.RemoveAt(index);
             }
         }
 
-        public static IEnumerable<T> Elements<T>(this System.Random random, IEnumerable<T> items, int min, int max)
+        public static IEnumerable<T> Elements<T>(this System.Random random, IList<T> items, int min, int max)
         {
             var count = random.Next(min, max);
             return random.Elements(items, count);
@@ -123,7 +121,7 @@ namespace Audacia.Random.Extensions
             return System.DateTime.Now.AddYears(-18).AddDays(-random.Next(0, 30000));
         }
         
-        public static T Element<T>(this System.Random random, IEnumerable<T> items)
+        public static T Element<T>(this System.Random random, ICollection<T> items)
         {
             var index = random.Next(0, items.Count() - 1);
             return items.ElementAt(index);
