@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.3</TargetFramework>
+    <TargetFramework>netstandard1.0</TargetFramework>
     <AssemblyVersion>1.1.0.0</AssemblyVersion>
     <Version>2.1.0.0</Version>
     <Authors>Adam Drewery</Authors>
@@ -43,7 +43,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MarkovSharp" Version="2.2.0" />
+    <PackageReference Include="MarkovSharp" Version="2.4.0" />
   </ItemGroup>
 
 </Project>
