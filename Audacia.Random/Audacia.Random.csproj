@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.0</TargetFramework>
+    <TargetFramework>netstandard1.3</TargetFramework>
     <AssemblyVersion>1.1.0.0</AssemblyVersion>
-    <Version>1.1.0.0</Version>
+    <Version>2.1.0.0</Version>
     <Authors>Adam Drewery</Authors>
     <Company>Audacia</Company>
     <PackageIconUrl>https://girnka-dm2305.files.1drv.com/y4mUfw_5APiy6YhvPidloaNkO5IMUh4GTX222ecazimKACSrlsUoptXi3WHjmHmPtDIxhjfcG0AJHcQ4NDxm4tA13PEBjzjoEnKm5hcoNzxS1i6um3cBaB0o9AMT3PXAULs9utk0wG6YP7tmUmQ_UTSaiG9mNEcXM_t1_Eiguvs1XeaIKBjbb_WF8hTUMzmwY_pGG8BuM9CDcu7tpW2oxK7fw</PackageIconUrl>
@@ -22,6 +22,7 @@
     <None Remove="companies" />
     <None Remove="forenames.female" />
     <None Remove="forenames.male" />
+    <None Remove="Sentences" />
     <None Remove="streets" />
     <None Remove="surnames" />
   </ItemGroup>
@@ -32,12 +33,17 @@
     <EmbeddedResource Include="Counties" />
     <EmbeddedResource Include="Forenames.Female" />
     <EmbeddedResource Include="Forenames.Male" />
+    <EmbeddedResource Include="Sentences" />
     <EmbeddedResource Include="Streets" />
     <EmbeddedResource Include="Surnames" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MarkovSharp" Version="2.2.0" />
   </ItemGroup>
 
 </Project>

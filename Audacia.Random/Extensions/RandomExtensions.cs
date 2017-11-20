@@ -1,11 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using MarkovSharp.TokenisationStrategies;
 
-namespace Audacia.Random
+namespace Audacia.Random.Extensions
 {
     public static class RandomExtensions
     {
+        private static StringMarkov StringMarkov => LazyStringMarkov.Value;
+        private static readonly Lazy<StringMarkov> LazyStringMarkov = new Lazy<StringMarkov>(() =>
+        {
+            var value = new StringMarkov(1);
+            value.Learn(Data.Sentences);
+            return value;
+        });
+        
         public static bool Boolean(this System.Random random)
         {
             return random.Next(0, 2).Equals(0);
@@ -113,10 +122,10 @@ namespace Audacia.Random
         {
             return System.DateTime.Now.AddYears(-18).AddDays(-random.Next(0, 30000));
         }
-
-        public static T Element<T>(this System.Random random, IList<T> items)
+        
+        public static T Element<T>(this System.Random random, IEnumerable<T> items)
         {
-            var index = random.Next(0, items.Count - 1);
+            var index = random.Next(0, items.Count() - 1);
             return items.ElementAt(index);
         }
 
@@ -135,7 +144,9 @@ namespace Audacia.Random
         public static string PostCode(this System.Random random) =>
             $"{random.Chars(2)}{random.Digits(2)} {random.Digit()}{random.Chars(2)}"
                 .ToUpperInvariant();
-        
+
+        public static string Words(this System.Random random) => StringMarkov.Walk().Single();
+
         public static string City(this System.Random random) => random.Element(Data.Cities);
 
         public static string County(this System.Random random) => random.Element(Data.Counties);
@@ -149,6 +160,10 @@ namespace Audacia.Random
         public static string Street(this System.Random random) => random.Element(Data.Streets);
 
         public static string Company(this System.Random random) => random.Element(Data.Companies);
+
+        public static string Sentence(this System.Random random) => random.Element(Data.Sentences);
+
+        public static string Word(this System.Random random) => random.Element(random.Element(Data.Sentences).Split(' ')).Trim('.');
                
     }
 }

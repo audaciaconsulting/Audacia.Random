@@ -1,4 +1,4 @@
-namespace Audacia.Random
+namespace Audacia.Random.Extensions
 {
     public static class ObjectExtensions
     {
