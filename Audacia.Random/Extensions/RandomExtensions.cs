@@ -67,11 +67,12 @@ namespace Audacia.Random.Extensions
 
         public static IEnumerable<T> Elements<T>(this System.Random random, IList<T> items, int count)
         {
+            var list = new List<T>(items);
             for (var i = count; i > 0; i--)
             {
-                var index = random.Next(0, items.Count);
-                yield return items[index];
-                items.RemoveAt(index);
+                var index = random.Next(0, list.Count);
+                yield return list[index];
+                list.RemoveAt(index);
             }
         }
 
