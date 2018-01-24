@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Audacia.Random
 {
-    internal static class Data
+    public static class Data
     {
         public static string[] Cities { get; } = List("Audacia.Random.Cities");
 
