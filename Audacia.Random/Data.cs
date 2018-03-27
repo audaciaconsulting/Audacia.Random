@@ -23,7 +23,6 @@ namespace Audacia.Random
 
         public static string[] Sentences { get; } = List("Audacia.Random.Sentences");
 
-
         private static string[] List(string name)
         {
             using (var textStreamReader = Reader(name))
