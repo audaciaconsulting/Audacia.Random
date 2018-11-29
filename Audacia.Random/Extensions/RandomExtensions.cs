@@ -74,13 +74,17 @@ namespace Audacia.Random.Extensions
 
         }
 
-        public static string Chars(this System.Random random, int count)
+        public static string String(this System.Random random, int length)
         {
-            var chars = Enumerable.Range(0, count)
+            var chars = random.Chars(length);
+            return new string(chars);
+        }
+
+        public static char[] Chars(this System.Random random, int count)
+        {
+            return Enumerable.Range(0, count)
                 .Select(_ => random.Char())
                 .ToArray();
-
-            return new string(chars);
         }
 
         public static char Char(this System.Random random)
