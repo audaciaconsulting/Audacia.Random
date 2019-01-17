@@ -136,7 +136,7 @@ namespace Audacia.Random.Extensions
         }
 
         public static string PostCode(this System.Random random) =>
-            $"{random.Chars(2)}{random.Digits(2)} {random.Digit()}{random.Chars(2)}"
+            $"{new string(random.Chars(2))}{random.Digits(2)} {random.Digit()}{new string(random.Chars(2))}"
                 .ToUpperInvariant();
 
         public static string City(this System.Random random) => random.Element(Data.Cities);
