@@ -155,6 +155,12 @@ namespace Audacia.Random.Extensions
 
         public static string Sentence(this System.Random random) => random.Element(Data.Sentences);
 
-        public static string Word(this System.Random random) => random.Element(random.Element(Data.Sentences).Split(' ')).Trim('.');
+        public static string Word(this System.Random random) => random.Element(Data.Nouns);
+        
+        public static string Words(this System.Random random,  int count)
+        {
+            var words = Enumerable.Range(0, count).Select(_ => random.Element(Data.Nouns));
+            return string.Join(" ", words);
+        }
     }
 }
