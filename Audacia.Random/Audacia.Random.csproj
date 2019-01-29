@@ -32,6 +32,7 @@
     <EmbeddedResource Include="Sentences" />
     <EmbeddedResource Include="Streets" />
     <EmbeddedResource Include="Surnames" />
+    <EmbeddedResource Include="Nouns" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

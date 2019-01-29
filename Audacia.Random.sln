@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Audacia.Random", "Audacia.R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Audacia.Random.Markov", "Audacia.Random.Markov\Audacia.Random.Markov.csproj", "{E32F477E-277D-4FE1-911F-8901AAB4678F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Audacia.Random.Tests", "Audacia.Random.Tests\Audacia.Random.Tests.csproj", "{B71B2123-AB80-492E-8446-C4751CA254FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E32F477E-277D-4FE1-911F-8901AAB4678F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E32F477E-277D-4FE1-911F-8901AAB4678F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E32F477E-277D-4FE1-911F-8901AAB4678F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B71B2123-AB80-492E-8446-C4751CA254FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B71B2123-AB80-492E-8446-C4751CA254FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B71B2123-AB80-492E-8446-C4751CA254FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B71B2123-AB80-492E-8446-C4751CA254FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
