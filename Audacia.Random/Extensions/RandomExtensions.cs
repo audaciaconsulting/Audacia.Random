@@ -139,6 +139,17 @@ namespace Audacia.Random.Extensions
             $"{new string(random.Chars(2))}{random.Digits(2)} {random.Digit()}{new string(random.Chars(2))}"
                 .ToUpperInvariant();
 
+        /// <summary>Organises the specified collection into multiple smaller collections of variable size.</summary>
+        public static IEnumerable<IEnumerable<T>> Chunks<T>(this System.Random random, IEnumerable<T> source, int count)
+        {
+            var chunks = Enumerable.Range(0, count).Select(_ => new List<T>()).ToList();
+
+            foreach (var element in source)
+                random.Element(chunks).Add(element);
+
+            return chunks;
+        }
+            
         public static string City(this System.Random random) => random.Element(Data.Cities);
 
         public static string County(this System.Random random) => random.Element(Data.Counties);
