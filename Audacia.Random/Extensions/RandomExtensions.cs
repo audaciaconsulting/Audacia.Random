@@ -17,11 +17,11 @@ namespace Audacia.Random.Extensions
                 System.DateTime.Now.AddYears(1));
 
         public static DateTime DateTimeFrom(this System.Random random, DateTime from) =>
-            random.DateTime(from, System.DateTime.Now.AddYears(1));
+            random.DateTime(from, from.AddYears(1));
 
 
         public static DateTime DateTimeTo(this System.Random random, DateTime to) =>
-            random.DateTime(System.DateTime.Now.AddYears(-1), to);
+            random.DateTime(to.AddYears(-1), to);
 
         public static DateTime DateTime(this System.Random random, DateTime from, DateTime to)
         {
