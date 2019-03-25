@@ -149,7 +149,7 @@ namespace Audacia.Random.Extensions
 
             return chunks;
         }
-            
+        
         /// <summary>Splits the specified integer into a collection of smaller integers who's total sum equals the source value.</summary>
         public static IEnumerable<int> Chunks(this System.Random random, int source, int count)
         {
