@@ -119,7 +119,7 @@ namespace Audacia.Random.Extensions
         
         public static T Element<T>(this System.Random random, ICollection<T> items)
         {
-            var index = random.Next(0, items.Count() - 1);
+            var index = random.Next(0, items.Count - 1);
             return items.ElementAt(index);
         }
 
@@ -147,6 +147,20 @@ namespace Audacia.Random.Extensions
             foreach (var element in source)
                 random.Element(chunks).Add(element);
 
+            return chunks;
+        }
+        
+        /// <summary>Splits the specified integer into a collection of smaller integers who's total sum equals the source value.</summary>
+        public static IEnumerable<int> Chunks(this System.Random random, int source, int count)
+        {
+            var chunks = Enumerable.Range(0, count).Select(_ => 0).ToList();
+
+            for (var i = 0; i < source; i++)
+            {
+                var index = random.Next(0, chunks.Count - 1);
+                chunks[index]++;
+            }
+            
             return chunks;
         }
             
