@@ -1,4 +1,5 @@
-# Documentation
+# Audacia.Random
+### Random data generation library
 
 ## Extension Methods
 
