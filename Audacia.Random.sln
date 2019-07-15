@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Audacia.Random", "Audacia.Random\Audacia.Random.csproj", "{DF030FC7-712C-424C-A5C2-04B7121439F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Audacia.Random.Markov", "Audacia.Random.Markov\Audacia.Random.Markov.csproj", "{E32F477E-277D-4FE1-911F-8901AAB4678F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Audacia.Random.Tests", "Audacia.Random.Tests\Audacia.Random.Tests.csproj", "{B71B2123-AB80-492E-8446-C4751CA254FB}"
 EndProject
 Global
