@@ -1,6 +1,8 @@
 # Audacia.Random
 ### Random data generation library
 
+![Build Status](https://dev.azure.com/audacia/Audacia/_apis/build/status/Audacia.Random?branchName=master)
+
 ## Extension Methods
 
 There are a variety of extension methods available for the `System.Random` class. These are listed below:
