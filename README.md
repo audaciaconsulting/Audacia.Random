@@ -2,6 +2,7 @@
 ### Random data generation library
 
 ![Build Status](https://dev.azure.com/audacia/Audacia/_apis/build/status/Audacia.Random?branchName=master)
+![Release Status](https://vsrm.dev.azure.com/audacia/_apis/public/Release/badge/8f54bcdc-d88d-46d7-9918-1bf635097bd4/7/7)
 
 ## Extension Methods
 
