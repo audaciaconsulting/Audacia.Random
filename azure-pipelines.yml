@@ -1,19 +1,18 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+name: $(Build.BuildId).$(Year:yy)$(DayOfYear)
 
 trigger:
 - master
+- develop
+- dev
 
 pool:
   vmImage: 'vs2017-win2016'
-
+  
 resources:
   repositories:
     - repository: templates
       type: git
       name: Audacia/Audacia.Build.Templates
-
+      
 steps:
 - template: build-package.netcore.yaml@templates
