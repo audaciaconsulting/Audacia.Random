@@ -13,7 +13,7 @@ resources:
   repositories:
     - repository: templates
       type: git
-      name: Audacia/Audacia.Build
+      name: Audacia/Audacia.Build.Templates
 
 steps:
-- template: build-templates/build-package.netcore.yaml@templates
+- template: build-package.netcore.yaml@templates
