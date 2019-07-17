@@ -16,4 +16,4 @@ resources:
       name: Audacia/Audacia.Build
 
 steps:
-- template: build-package.netcore.yaml@templates
+- template: build-templates/build-package.netcore.yaml@templates
