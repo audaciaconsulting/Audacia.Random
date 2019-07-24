@@ -15,4 +15,4 @@ resources:
       name: Audacia/Audacia.Build.Templates
       
 steps:
-- template: build-package.netcore.yaml@templates
+- template: build-signed-package.netcore.yaml@templates
