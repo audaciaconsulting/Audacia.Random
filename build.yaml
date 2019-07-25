@@ -2,8 +2,6 @@ name: $(Build.BuildId).$(Year:yy)$(DayOfYear)
 
 trigger:
 - master
-- develop
-- dev
 
 resources:
   repositories:
