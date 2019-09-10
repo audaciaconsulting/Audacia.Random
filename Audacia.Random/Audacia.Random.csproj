@@ -8,8 +8,8 @@
     <RepositoryUrl>https://github.com/audaciaconsulting/Audacia.Random</RepositoryUrl>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyVersion>3.0.0.0</AssemblyVersion>
-    <Version>3.0.0.0</Version>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <Version>4.0.0.0</Version>
     <Authors>Adam Drewery</Authors>
     <Company>Audacia</Company>
     <PackageIconUrl>https://www.audacia.co.uk/media/pkenoobu/audacia-logo-circle-blue.png</PackageIconUrl>
@@ -37,5 +37,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.4" />
   </ItemGroup>
 </Project>
