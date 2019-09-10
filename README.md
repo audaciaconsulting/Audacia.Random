@@ -2,8 +2,8 @@
 ### Random data generation library
 
 ![Build Status](https://dev.azure.com/audacia/Audacia/_apis/build/status/Audacia.Random?branchName=master)
-
 [![NuGet](https://img.shields.io/nuget/v/Audacia.Random.svg)](https://www.nuget.org/packages/Audacia.Random)
+[![CodeFactor](https://www.codefactor.io/repository/github/audaciaconsulting/audacia.random/badge)](https://www.codefactor.io/repository/github/audaciaconsulting/audacia.random)
 
 ## Extension Methods
 
