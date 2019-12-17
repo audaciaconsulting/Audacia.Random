@@ -2,7 +2,7 @@ name: $(Build.BuildId).$(Year:yy)$(DayOfYear)
 trigger: [master]
 pr: { branches: { include: [master] } }
 schedules: [ { cron: "0 0 * * *", displayName: Nightly Build, branches: { include: [ master ] } } ]
-resources: { repositories: [ { repository: templates, type: git, name: Audacia/Audacia.Build } ] }
+resources: { repositories: [ { repository: templates, type: git, name: Audacia/Audacia.Build, ref: refs/heads/bugfix/strong-naming } ] }
 
 stages:
 - stage: Build
