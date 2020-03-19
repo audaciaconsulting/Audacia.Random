@@ -50,6 +50,7 @@ namespace Audacia.Random.Extensions
         }
 
         public static T Enum<T>(this System.Random random)
+            where T: Enum
         {
             var values = System.Enum.GetValues(typeof(T)).OfType<object>().ToList();
             var value = random.Element(values);
