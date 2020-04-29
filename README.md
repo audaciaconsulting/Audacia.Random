@@ -30,6 +30,7 @@ There are a variety of extension methods available for the `System.Random` class
 - `.County()`
 - `.MaleForename()`
 - `.FemaleForename()`
+- `.Forename()`
 - `.Surname()`
 - `.Street()`
 - `.Company()`
