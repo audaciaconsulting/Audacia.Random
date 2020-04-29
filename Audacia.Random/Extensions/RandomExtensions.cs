@@ -172,6 +172,8 @@ namespace Audacia.Random.Extensions
         public static string MaleForename(this System.Random random) => random.Element(Data.MaleNames);
 
         public static string FemaleForename(this System.Random random) => random.Element(Data.FemaleNames);
+        
+        public static string Forenames(this System.Random random) => Boolean(random) ? random.Element(Data.FemaleNames) : random.Element(Data.MaleNames);
 
         public static string Surname(this System.Random random) => random.Element(Data.Surnames);
 
