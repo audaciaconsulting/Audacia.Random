@@ -120,7 +120,7 @@ namespace Audacia.Random.Extensions
         
         public static T Element<T>(this System.Random random, ICollection<T> items)
         {
-            var index = random.Next(0, items.Count - 1);
+            var index = random.Next(0, items.Count);
             return items.ElementAt(index);
         }
 
