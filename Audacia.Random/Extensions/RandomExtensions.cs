@@ -190,5 +190,7 @@ namespace Audacia.Random.Extensions
             var words = Enumerable.Range(0, count).Select(_ => random.Element(Data.Nouns));
             return string.Join(" ", words);
         }
+        
+        public static string EmailAddress(this System.Random random) => Forename(random).ToLower() + "." + Surname(random).ToLower() + "@example.com";
     }
 }
