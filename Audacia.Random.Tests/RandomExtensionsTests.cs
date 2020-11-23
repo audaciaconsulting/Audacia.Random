@@ -41,5 +41,14 @@ namespace Audacia.Random.Tests
             Assert.True(postCode.Count(c => c == ' ') == 1);
             Assert.NotEmpty(postCode);
         }
+        
+        [Fact]
+        public void EmailAddress()
+        {
+            var emailAddress = Random.EmailAddress();
+            Output.WriteLine("Email address: " + emailAddress);
+
+            Assert.NotEmpty(emailAddress);
+        }
     }
 }
