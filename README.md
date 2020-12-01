@@ -34,6 +34,7 @@ There are a variety of extension methods available for the `System.Random` class
 - `.Surname()`
 - `.Street()`
 - `.Company()`
+- `.EmailAddress()`
 
 For any other object, the following extension methods are available:
 - `.OrNull()`
