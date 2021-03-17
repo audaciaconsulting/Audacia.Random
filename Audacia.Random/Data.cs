@@ -23,7 +23,7 @@ namespace Audacia.Random
 
         public static string[] Sentences { get; } = List("Audacia.Random.Sentences");
         
-        public static string[] Nouns { get; } = List("Audacia.Random.Nouns");
+        public static string[] Words { get; } = List("Audacia.Random.Words");
 
         private static string[] List(string name)
         {
