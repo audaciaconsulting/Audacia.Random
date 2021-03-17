@@ -55,21 +55,21 @@ namespace Audacia.Random.Tests
         [Fact]
         public void NextGaussian()
         {
-            var mu = new System.Random().Next();
-            var sigma = new System.Random().NextDouble();
+            const int mu = 100;
+            const double sigma = 5;
             
+            // Generated 1000 normally-distributed numbers
             var numbers = Enumerable.Range(0, 1000).Select(_ => Random.NextGaussian(mu, sigma)).ToList();
 
-            
-            var average = numbers.Average();
-            var stDev = numbers.Average(n => Math.Abs(n - mu));
-            Output.WriteLine($"Average: {average}");
-            Output.WriteLine($"Standard deviation: {stDev}");
+            var actualMu = numbers.Average();
+            var actualSigma = numbers.Average(number => Math.Abs(number - mu));
+            Output.WriteLine($"Average: {actualMu}");
+            Output.WriteLine($"Standard deviation: {actualSigma}");
 
             // Since normally distributed, there will always be a small error
             var tolerance = 0.1d * sigma;
-            Assert.True(average - mu <= tolerance);
-            Assert.True(stDev - sigma <= tolerance);
+            Assert.True(actualMu - mu <= tolerance);
+            Assert.True(actualSigma - sigma <= tolerance);
         }
     }
 }
