@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Audacia.Random.Extensions;
 using Xunit;
@@ -49,6 +50,26 @@ namespace Audacia.Random.Tests
             Output.WriteLine("Email address: " + emailAddress);
 
             Assert.NotEmpty(emailAddress);
+        }
+
+        [Fact]
+        public void NextGaussian()
+        {
+            const int mu = 100;
+            const double sigma = 5;
+            
+            // Generated 1000 normally-distributed numbers
+            var numbers = Enumerable.Range(0, 1000).Select(_ => Random.NextGaussian(mu, sigma)).ToList();
+
+            var actualMu = numbers.Average();
+            var actualSigma = numbers.Average(number => Math.Abs(number - mu));
+            Output.WriteLine($"Average: {actualMu}");
+            Output.WriteLine($"Standard deviation: {actualSigma}");
+
+            // Since normally distributed, there will always be a small error
+            var tolerance = 0.1d * sigma;
+            Assert.True(actualMu - mu <= tolerance);
+            Assert.True(actualSigma - sigma <= tolerance);
         }
     }
 }
