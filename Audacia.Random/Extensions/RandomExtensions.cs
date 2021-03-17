@@ -50,6 +50,7 @@ namespace Audacia.Random.Extensions
         }
 
         public static T Enum<T>(this System.Random random)
+            where T: Enum
         {
             var values = System.Enum.GetValues(typeof(T)).OfType<object>().ToList();
             var value = random.Element(values);
@@ -119,7 +120,7 @@ namespace Audacia.Random.Extensions
         
         public static T Element<T>(this System.Random random, ICollection<T> items)
         {
-            var index = random.Next(0, items.Count - 1);
+            var index = random.Next(0, items.Count);
             return items.ElementAt(index);
         }
 
@@ -171,6 +172,8 @@ namespace Audacia.Random.Extensions
         public static string MaleForename(this System.Random random) => random.Element(Data.MaleNames);
 
         public static string FemaleForename(this System.Random random) => random.Element(Data.FemaleNames);
+        
+        public static string Forename(this System.Random random) => Boolean(random) ? random.Element(Data.FemaleNames) : random.Element(Data.MaleNames);
 
         public static string Surname(this System.Random random) => random.Element(Data.Surnames);
 
@@ -187,5 +190,7 @@ namespace Audacia.Random.Extensions
             var words = Enumerable.Range(0, count).Select(_ => random.Element(Data.Nouns));
             return string.Join(" ", words);
         }
+        
+        public static string EmailAddress(this System.Random random) => Forename(random).ToLower() + "." + Surname(random).ToLower() + "@example.com";
     }
 }
