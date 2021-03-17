@@ -50,11 +50,11 @@ namespace Audacia.Random.Extensions
         }
 
         public static T Enum<T>(this System.Random random)
-            where T: Enum
+            where T : Enum
         {
             var values = System.Enum.GetValues(typeof(T)).OfType<object>().ToList();
             var value = random.Element(values);
-            return (T)value;
+            return (T) value;
         }
 
         public static IEnumerable<T> Elements<T>(this System.Random random, IList<T> items, int count)
@@ -72,7 +72,6 @@ namespace Audacia.Random.Extensions
         {
             var count = random.Next(min, max);
             return random.Elements(items, count);
-
         }
 
         public static string String(this System.Random random, int length)
@@ -91,7 +90,7 @@ namespace Audacia.Random.Extensions
         public static char Char(this System.Random random)
         {
             var num = random.Next(0, 26); // Zero to 25
-            return (char)('a' + num);
+            return (char) ('a' + num);
         }
 
         public static string Digits(this System.Random random, int count)
@@ -117,7 +116,7 @@ namespace Audacia.Random.Extensions
         {
             return System.DateTime.Now.AddYears(-18).AddDays(-random.Next(0, 30000));
         }
-        
+
         public static T Element<T>(this System.Random random, ICollection<T> items)
         {
             var index = random.Next(0, items.Count);
@@ -150,7 +149,7 @@ namespace Audacia.Random.Extensions
 
             return chunks;
         }
-        
+
         /// <summary>Splits the specified integer into a collection of smaller integers who's total sum equals the source value.</summary>
         public static IEnumerable<int> Chunks(this System.Random random, int source, int count)
         {
@@ -161,10 +160,10 @@ namespace Audacia.Random.Extensions
                 var index = random.Next(0, chunks.Count - 1);
                 chunks[index]++;
             }
-            
+
             return chunks;
         }
-            
+
         public static string City(this System.Random random) => random.Element(Data.Cities);
 
         public static string County(this System.Random random) => random.Element(Data.Counties);
@@ -172,8 +171,9 @@ namespace Audacia.Random.Extensions
         public static string MaleForename(this System.Random random) => random.Element(Data.MaleNames);
 
         public static string FemaleForename(this System.Random random) => random.Element(Data.FemaleNames);
-        
-        public static string Forename(this System.Random random) => Boolean(random) ? random.Element(Data.FemaleNames) : random.Element(Data.MaleNames);
+
+        public static string Forename(this System.Random random) =>
+            Boolean(random) ? random.Element(Data.FemaleNames) : random.Element(Data.MaleNames);
 
         public static string Surname(this System.Random random) => random.Element(Data.Surnames);
 
@@ -184,13 +184,33 @@ namespace Audacia.Random.Extensions
         public static string Sentence(this System.Random random) => random.Element(Data.Sentences);
 
         public static string Word(this System.Random random) => random.Element(Data.Nouns);
-        
-        public static string Words(this System.Random random,  int count)
+
+        public static string Words(this System.Random random, int count)
         {
             var words = Enumerable.Range(0, count).Select(_ => random.Element(Data.Nouns));
             return string.Join(" ", words);
         }
-        
-        public static string EmailAddress(this System.Random random) => Forename(random).ToLower() + "." + Surname(random).ToLower() + "@example.com";
+
+        public static string EmailAddress(this System.Random random) =>
+            Forename(random).ToLower() + "." + Surname(random).ToLower() + "@example.com";
+
+        /// <summary> Generates a normally (gaussian) distributed number, based on the provided <paramref name="mu"/> and <paramref name="sigma"/>, using the Box-Muller transform.</summary>
+        /// <param name="random"></param>
+        /// <param name="mu">The mean of the distribution.</param>
+        /// <param name="sigma">The standard deviation of the distribution.</param>
+        public static double NextGaussian(this System.Random random, double mu = 0, double sigma = 1)
+        {
+            // Create two independent samples in the range 0 to 1, for use in seeding this randomly generated number.
+            var u1 = random.NextDouble(); 
+            var u2 = random.NextDouble();
+            
+            // Create normally distributed number with mean 0 and standard deviation 1. This part is the Box-Muller transform.
+            var standardNormal = Math.Sqrt(-2.0 * Math.Log(u1)) * Math.Sin(2.0 * Math.PI * u2);
+            
+            // Transform this standard based on our mean & standard deviation
+            var normal = mu + sigma * standardNormal;
+
+            return normal;
+        }
     }
 }
