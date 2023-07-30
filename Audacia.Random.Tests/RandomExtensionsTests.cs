@@ -53,6 +53,15 @@ namespace Audacia.Random.Tests
         }
 
         [Fact]
+        public void TimeSpan()
+        {
+            var timeSpan = Random.TimeSpan(System.TimeSpan.Zero, System.TimeSpan.FromMinutes(1));
+            Output.WriteLine("Timespan: " + timeSpan);
+
+            Assert.InRange(timeSpan, System.TimeSpan.Zero, System.TimeSpan.FromMinutes(1));
+        }
+
+        [Fact]
         public void NextGaussian()
         {
             const int mu = 100;

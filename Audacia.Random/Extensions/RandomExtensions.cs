@@ -212,5 +212,11 @@ namespace Audacia.Random.Extensions
 
             return normal;
         }
+
+        public static TimeSpan TimeSpan(this System.Random random, TimeSpan lower, TimeSpan upper)
+        {
+            var ticks = random.Long(lower.Ticks, upper.Ticks);
+            return new TimeSpan(ticks);
+        }
     }
 }
