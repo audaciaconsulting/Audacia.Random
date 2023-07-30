@@ -12,6 +12,7 @@ There are a variety of extension methods available for the `System.Random` class
 - `.DateTime(DateTime from)`
 - `.DateTime(DateTime to)`
 - `.DateTime(DateTime from, DateTime to)`
+- `.TimeSpan(TimeSpan from, TimeSpan to)`~~~~
 - `.Enum<T>()`
 - `.Element<T>(IEnumerable<T> items)`
 - `.Elements<T>(IEnumerable<T> items, int count)`
