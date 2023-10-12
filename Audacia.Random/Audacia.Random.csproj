@@ -13,7 +13,7 @@
   <PropertyGroup>
     <AssemblyVersion>3.1.0.0</AssemblyVersion>
     <Version>3.1.0.0</Version>
-    <Authors>Adam Drewery</Authors>
+    <Authors>Audacia</Authors>
     <Company>Audacia</Company>
     <PackageIconUrl>https://www.audacia.co.uk/media/pkenoobu/audacia-logo-circle-blue.png</PackageIconUrl>
     <Description>Utilities and extension methods for generating random organic test data.</Description>
