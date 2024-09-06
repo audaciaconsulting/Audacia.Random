@@ -51,3 +51,6 @@ The `Audacia.Random.Data` class exposes the collections of strings used for some
 - `Surnames`
 - `Streets`
 - `Companies`
+
+# Change History
+The `Audacia.Random` repository change history can be found in this [changelog](./CHANGELOG.md)
