@@ -11,13 +11,12 @@
     <DelaySign>true</DelaySign>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyVersion>3.1.20120.2</AssemblyVersion>
-    <Version>3.1.20120.2</Version>
+    <Version>3.1.21077</Version>
     <Authors>Audacia</Authors>
     <Company>Audacia</Company>
     <PackageIconUrl>https://www.audacia.co.uk/media/pkenoobu/audacia-logo-circle-blue.png</PackageIconUrl>
     <Description>Utilities and extension methods for generating random organic test data.</Description>
-    <Copyright>Copyright © Audacia 2017</Copyright>
+    <Copyright>Copyright © Audacia $([System.DateTime]::Now.Year)</Copyright>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="companies" />
