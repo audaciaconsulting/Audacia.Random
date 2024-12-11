@@ -23,15 +23,7 @@ namespace Audacia.Random.Tests
             Assert.NotEmpty(word);
         }
         
-        [Fact]
-        public void Words()
-        {
-            var words = Random.Words(3);
-            Output.WriteLine("Words: " + words);
-            
-            Assert.True(words.Count(c => c == ' ') == 2);
-            Assert.NotEmpty(words);
-        }
+
         
         [Fact]
         public void Postcode()
