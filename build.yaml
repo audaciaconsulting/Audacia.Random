@@ -9,7 +9,7 @@ resources:
   repositories:
     - repository: templates
       type: github
-      ref: refs/head/feature/204030-use-trusted-signing-for-assembly-signing
+      ref: refs/heads/feature/204030-use-trusted-signing-for-assembly-signing
       endpoint: shared-github
       name: audaciaconsulting/Audacia.Build
 pool:
