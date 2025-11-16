@@ -9,16 +9,26 @@ resources:
   repositories:
     - repository: templates
       type: github
+      ref: refs/head/feature/204030-use-trusted-signing-for-assembly-signing
       endpoint: shared-github
       name: audaciaconsulting/Audacia.Build
 pool:
   vmImage: windows-2022
+variables:
+  - group: Code Signing
 
 stages:
 - stage: Stage_Build
   displayName: Build
   jobs:
     - template: src/build/dotnet/jobs/signed-nuget-package.job.yaml@templates
+      parameters:
+        trustedSigningEndpoint: $(TrustedSigningEndpoint)
+        trustedSigningAccount: $(TrustedSigningAccount)
+        trustedSigningCertificateProfile: $(TrustedSigningCertificateProfile)
+        directory: $(Build.SourcesDirectory)/Audacia.Random
+        fileToSignPattern: 'Audacia.Random.dll'
+        serviceConnection: 'Audacia Code Signing'
 
 - stage: Stage_Release
   displayName: Release
