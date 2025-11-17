@@ -41,3 +41,7 @@ stages:
     )
   jobs:
     - template: src/deployment/nuget/jobs/public-nuget-package.job.yaml@templates
+      parameters:
+        trustedSigningEndpoint: $(TrustedSigningEndpoint)
+        trustedSigningAccount: $(TrustedSigningAccount)
+        trustedSigningCertificateProfile: $(TrustedSigningCertificateProfile)
