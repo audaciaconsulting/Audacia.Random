@@ -45,3 +45,4 @@ stages:
         trustedSigningEndpoint: $(TrustedSigningEndpoint)
         trustedSigningAccount: $(TrustedSigningAccount)
         trustedSigningCertificateProfile: $(TrustedSigningCertificateProfile)
+        serviceConnection: 'Audacia Code Signing'
