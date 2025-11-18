@@ -33,12 +33,11 @@ stages:
 - stage: Stage_Release
   displayName: Release
   dependsOn: Stage_Build
-  condition: succeeded()
-  #condition: >
-  #  and(
-  #    succeeded(),
-  #    notIn(variables['Build.Reason'], 'PullRequest', 'Schedule'),
-  #    eq(dependencies.Stage_Build.outputs['Job_Build.UpdateVersions.ShouldPublish'], true)
-  #  )
+  condition: >
+    and(
+      succeeded(),
+      notIn(variables['Build.Reason'], 'PullRequest', 'Schedule'),
+      eq(dependencies.Stage_Build.outputs['Job_Build.UpdateVersions.ShouldPublish'], true)
+    )
   jobs:
     - template: src/deployment/nuget/jobs/public-nuget-package.job.yaml@templates
