@@ -5,6 +5,15 @@
 [![NuGet](https://img.shields.io/nuget/v/Audacia.Random.svg)](https://www.nuget.org/packages/Audacia.Random)
 [![CodeFactor](https://www.codefactor.io/repository/github/audaciaconsulting/audacia.random/badge)](https://www.codefactor.io/repository/github/audaciaconsulting/audacia.random)
 
+## Target Framework
+
+This library targets **.NET Standard 2.0**, making it compatible with:
+- .NET Core 2.0 and later
+- .NET Framework 4.6.1 and later
+- .NET 5.0 and later (including .NET 6, 7, 8, 9, 10+)
+
+**Note:** As of version 4.0.0, .NET Standard 1.2 support has been removed. If you require .NET Standard 1.2 compatibility, please use version 3.x.
+
 ## Extension Methods
 
 There are a variety of extension methods available for the `System.Random` class. These are listed below:

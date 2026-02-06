@@ -1,5 +1,20 @@
 ﻿# Changelog
 
+## 4.0.0 - 2025-01-23
+### Added
+- No new functionality added
+
+### Changed
+- Updated target framework to .NET Standard 2.0 only (removed .NET Standard 1.2 support)
+- Updated test project to .NET 10.0
+- Updated NuGet dependencies in test project to latest versions:
+  - Microsoft.NET.Test.Sdk: 15.8.0 → 17.12.0
+  - xunit: 2.3.1 → 2.9.2
+  - xunit.runner.visualstudio: 2.3.1 → 2.8.2
+
+### Fixed
+- No bug fixes
+
 ## 3.1.21077 - 2023-10-12
 ### Added
 - No new functionality added

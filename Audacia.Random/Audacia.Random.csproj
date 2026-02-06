@@ -4,14 +4,14 @@
     <SccProvider>SAK</SccProvider>
     <SccAuxPath>SAK</SccAuxPath>
     <SccLocalPath>SAK</SccLocalPath>
-    <TargetFrameworks>netstandard1.2;netstandard2.0</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <RepositoryUrl>https://github.com/audaciaconsulting/Audacia.Random</RepositoryUrl>
     <ProjectGuid>{2004CD59-BEB0-46B1-8265-DF351E1023CE}</ProjectGuid>
     <SignAssembly>true</SignAssembly>
     <DelaySign>true</DelaySign>
   </PropertyGroup>
   <PropertyGroup>
-    <Version>3.1.21077</Version>
+    <Version>4.0.0</Version>
     <Authors>Audacia</Authors>
     <Company>Audacia</Company>
     <PackageIconUrl>https://www.audacia.co.uk/media/pkenoobu/audacia-logo-circle-blue.png</PackageIconUrl>
