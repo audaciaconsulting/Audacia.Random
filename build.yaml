@@ -26,7 +26,7 @@ stages:
         trustedSigningAccount: $(TrustedSigningAccount)
         trustedSigningCertificateProfile: $(TrustedSigningCertificateProfile)
         directory: $(Build.SourcesDirectory)
-        fileToSignPattern: 'Audacia.Mail.dll'
+        fileToSignPattern: 'Audacia.Random.dll'
         serviceConnection: 'Audacia Code Signing'
         excludePaths: '*.Test*.csproj'
 
