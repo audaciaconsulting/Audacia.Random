@@ -1,0 +1,38 @@
+version: 2
+updates:
+  - package-ecosystem: "nuget"
+    directory: "/"
+    schedule:
+      interval: "cron"
+      # Every Monday 06:00
+      cronjob: "0 6 * * 1"
+      timezone: "Etc/UTC"
+
+    commit-message:
+      prefix: "chore"
+
+    # Ignore all major version updates.
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+
+    # Safeguard against defective updates by leaving a cooldown period to allow for issues to be addressed.
+    cooldown:
+      semver-minor-days: 14
+      semver-patch-days: 7
+      default-days: 7
+
+    open-pull-requests-limit: 5
+
+    # Group dependency updates into individual PRs for the following groups.
+    groups:
+      microsoft:
+        patterns: ["Microsoft.*"]
+      azure:
+        patterns: ["Azure.*"]
+      audacia:
+        patterns: ["Audacia.*"]
+      openiddict:
+        patterns: ["OpenIddict.*"]
+      test-dependencies:
+        patterns: ["XUnit.*", "xunit*"]
