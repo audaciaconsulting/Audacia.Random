@@ -1,0 +1,3 @@
+# Dependabot reviewers group
+*.csproj               @audaciaconsulting/dependabot-update-reviewers
+Directory.Build.props  @audaciaconsulting/dependabot-update-reviewers
